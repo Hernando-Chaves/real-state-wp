@@ -7,6 +7,7 @@
          for($i=1;$i<=10;$i++):
          $id_img   = get_theme_mod("slider_$i");
          $ruta_img = wp_get_attachment_image_src($id_img,'full');
+         
          if($id_img):
      ?>   
         <!-- Slides -->
@@ -43,42 +44,61 @@
     <div class="container">
         <div class="row">
             <div class="col-lg-5 col-md-5 mb-30">
-                
                 <a href="#" class="location-module">
-                    <img src="<?php echo get_template_directory_uri() ?> /assets/images/banner/location-01.jpg" alt="">
+                    <?php 
+                        $crop_img = get_theme_mod("cat_1");
+                        $img_cat  = wp_get_attachment_image_src($crop_img,'full');
+                        // echo "<pre>";
+                        //     var_dump($crop_img);
+                        // echo "</pre>";
+                    ?>
+                    <img src="<?php echo $img_cat[0]; ?>" alt="">
                     <div class="location-module__cont">
-                        <h3 class="location-module__name">Home</h3>
-                        <span class="location-module__badge">For Rent</span>
+                        <h3 class="location-module__name"><?php echo get_theme_mod("titulo_cat_1") ?></h3>
+                        <span class="location-module__badge"><?php echo get_theme_mod("ribon_cat_1") ?></span>
                     </div>
                 </a>
             </div>
             <div class="col-lg-7 col-md-7 mb-30">
                 <a href="#" class="location-module">
-                    <img src="<?php echo get_template_directory_uri() ?> /assets/images/banner/location-02.jpg" alt="">
                     <div class="location-module__cont">
-                        <h3 class="location-module__name">Appartment</h3>
-                        <span class="location-module__badge">For Sale</span>
+                    <?php
+                        $crop_img = get_theme_mod("cat_2");
+                        $img_cat  = wp_get_attachment_image_src($crop_img,'full');
+                    ?>
+                    <img src="<?php echo $img_cat[0];  ?>" alt="">
+                        <h3 class="location-module__name"><?php echo get_theme_mod("titulo_cat_2") ?></h3>
+                        <span class="location-module__badge"><?php echo get_theme_mod("ribon_cat_2") ?></span>
                     </div>
                 </a>
             </div>
-            <a href="#" class="col-lg-7 col-md-7 mb-30">
-                <div class="location-module">
-                    <img src="<?php echo get_template_directory_uri() ?> /assets/images/banner/location-03.jpg" alt="">
+            <div class="col-lg-7 col-md-7 mb-30">
+                <a href="#" class="location-module">
                     <div class="location-module__cont">
-                        <h3 class="location-module__name">Office</h3>
-                        <span class="location-module__badge">For Rent</span>
+                    <?php
+                        $crop_img = get_theme_mod("cat_4");
+                        $img_cat  = wp_get_attachment_image_src($crop_img,'full');
+                    ?>
+                    <img src="<?php echo $img_cat[0];  ?>" alt="">
+                        <h3 class="location-module__name"><?php echo get_theme_mod("titulo_cat_4") ?></h3>
+                        <span class="location-module__badge"><?php echo get_theme_mod("ribon_cat_4") ?></span>
                     </div>
-                </div>
-            </a>
-            <a href="#" class="col-lg-5 col-md-5 mb-30">
-                <div class="location-module">
-                    <img src="<?php echo get_template_directory_uri() ?> /assets/images/banner/location-04.jpg" alt="">
+                </a>
+            </div>
+            <div class="col-lg-5 col-md-5 mb-30">
+                <a href="#" class="location-module">
+                    <?php 
+                        $crop_img = get_theme_mod("cat_3");
+                        $img_cat  = wp_get_attachment_image_src($crop_img,'full');
+                    ?>
+                    <img src="<?php echo $img_cat[0]; ?>" alt="">
                     <div class="location-module__cont">
-                        <h3 class="location-module__name">Farm House</h3>
-                        <span class="location-module__badge">For Sale</span>
+                        <h3 class="location-module__name"><?php echo get_theme_mod("titulo_cat_3") ?></h3>
+                        <span class="location-module__badge"><?php echo get_theme_mod("ribon_cat_3") ?></span>
                     </div>
-                </div>
-            </a>
+                </a>
+            </div>
+           
         </div>
     </div>
 </div>
@@ -180,8 +200,8 @@
             <div class="col-12">
                 <div class="tabs-categorys-list mb-30 mb-md-20 mb-xs-20 mb-sm-20">
                     <ul class="nav" role="tablist">
-                       <li class="active"><a class="active" href="#tab_item_01" role="tab" data-toggle="tab">Property for Sale</a></li>
-                       <li><a href="#tab_item_02" role="tab" data-toggle="tab">Property for Rent</a></li>
+                       <li class="active"><a class="active" href="#tab_item_01" role="tab" data-toggle="tab">Propiedades en venta</a></li>
+                       <li><a href="#tab_item_02" role="tab" data-toggle="tab">Propiedades en arriendo</a></li>
                    </ul>
                 </div>
             </div>
@@ -193,354 +213,12 @@
             <div class="tab-pane active" id="tab_item_01">
                 
                 <div class="row ">
-
-                    <div class="col-lg-3 col-md-6 col-12">
-                        <!-- single-property Start -->
-                        <div class="single-property mt-30">
-                            <div class="property-img">
-                                <a href="properties-details.html">
-                                    <img src="<?php echo get_template_directory_uri() ?> /assets/images/propertes/01.jpg" alt="">
-                                </a>
-                                <span class="level-stryker">FOR RENT</span>
-                            </div>
-                            <div class="property-desc">
-                                <h4><a href="properties-details.html">Mariyasa de Casel </a></h4>
-                                <p>
-                                    <span class="location">22 First street, Chicago, USA</span>
-                                    <span class="property-info">1200 Sqft, 3 Bed, 2 Bath, 1 Garage </span>
-                                </p>
-                                <div class="price-box">
-                                    <p>Price $ 1,59,000</p>
-                                </div>
-                            </div>
-                        </div><!-- single-property End -->
-                    </div>
-
-                    <div class="col-lg-3 col-md-6 col-12">
-                        <!-- single-property Start -->
-                        <div class="single-property mt-30">
-                            <div class="property-img">
-                                <a href="properties-details.html">
-                                    <img src="<?php echo get_template_directory_uri() ?> /assets/images/propertes/02.jpg" alt="">
-                                </a>
-                            </div>
-                            <div class="property-desc">
-                                <h4><a href="properties-details.html">Rose de Alfanez</a></h4>
-                                <p>
-                                    <span class="location">132 Future Street, Boston, USA</span>
-                                    <span class="property-info">1600 Sqft, 4 Bed, 2 Bath, 2 Garage </span>
-                                </p>
-                                <div class="price-box">
-                                    <p>Price $ 1,59,000</p>
-                                </div>
-                            </div>
-                        </div><!-- single-property End -->
-                    </div>
-
-                    <div class="col-lg-3 col-md-6 col-12">
-                        <!-- single-property Start -->
-                        <div class="single-property mt-30">
-                            <div class="property-img">
-                                <a href="properties-details.html">
-                                    <img src="<?php echo get_template_directory_uri() ?> /assets/images/propertes/03.jpg" alt="">
-                                </a>
-                                <span class="level-stryker-2">FOR RENT</span>
-                            </div>
-                            <div class="property-desc">
-                                <h4><a href="properties-details.html">La Casanda Villa</a></h4>
-                                <p>
-                                    <span class="location">1 DE Silicon Tower, Denver</span>
-                                    <span class="property-info">1800 Sqft, 6 Bed, 4 Bath, 3 Garage </span>
-                                </p>
-                                <div class="price-box">
-                                    <p>Price $2,32,000</p>
-                                </div>
-                            </div>
-                        </div><!-- single-property End -->
-                    </div>
-
-                    <div class="col-lg-3 col-md-6 col-12">
-                        <!-- single-property Start -->
-                        <div class="single-property mt-30">
-                            <div class="property-img">
-                                <a href="properties-details.html">
-                                    <img src="<?php echo get_template_directory_uri() ?> /assets/images/propertes/04.jpg" alt="">
-                                </a>
-                            </div>
-                            <div class="property-desc">
-                                <h4><a href="properties-details.html">Rainforest de Olive</a></h4>
-                                <p>
-                                    <span class="location">22 First street, Chicago, USA</span>
-                                    <span class="property-info">1200 Sqft, 3 Bed, 2 Bath, 1 Garage </span>
-                                </p>
-                                <div class="price-box">
-                                    <p>Rent $32,00/m</p>
-                                </div>
-                            </div>
-                        </div><!-- single-property End -->
-                    </div>
-
-                    <div class="col-lg-3 col-md-6 col-12">
-                        <!-- single-property Start -->
-                        <div class="single-property mt-30">
-                            <div class="property-img">
-                                <a href="properties-details.html">
-                                    <img src="<?php echo get_template_directory_uri() ?> /assets/images/propertes/05.jpg" alt="">
-                                </a>
-                            </div>
-                            <div class="property-desc">
-                                <h4><a href="properties-details.html">Mariyasa de Casel </a></h4>
-                                <p>
-                                    <span class="location">22 First street, Chicago, USA</span>
-                                    <span class="property-info">1200 Sqft, 3 Bed, 2 Bath, 1 Garage </span>
-                                </p>
-                                <div class="price-box">
-                                    <p>Price $ 1,59,000</p>
-                                </div>
-                            </div>
-                        </div><!-- single-property End -->
-                    </div>
-
-                    <div class="col-lg-3 col-md-6 col-12">
-                        <!-- single-property Start -->
-                        <div class="single-property mt-30">
-                            <div class="property-img">
-                                <a href="properties-details.html">
-                                    <img src="<?php echo get_template_directory_uri() ?> /assets/images/propertes/06.jpg" alt="">
-                                </a>
-                                <span class="level-stryker-2">FOR RENT</span>
-                            </div>
-                            <div class="property-desc">
-                                <h4><a href="properties-details.html">Rose de Alfanez</a></h4>
-                                <p>
-                                    <span class="location">132 Future Street, Boston, USA</span>
-                                    <span class="property-info">1600 Sqft, 4 Bed, 2 Bath, 2 Garage </span>
-                                </p>
-                                <div class="price-box">
-                                    <p>Price $ 1,59,000</p>
-                                </div>
-                            </div>
-                        </div><!-- single-property End -->
-                    </div>
-
-                    <div class="col-lg-3 col-md-6 col-12">
-                        <!-- single-property Start -->
-                        <div class="single-property mt-30">
-                            <div class="property-img">
-                                <a href="properties-details.html">
-                                    <img src="<?php echo get_template_directory_uri() ?> /assets/images/propertes/07.jpg" alt="">
-                                </a>
-                            </div>
-                            <div class="property-desc">
-                                <h4><a href="properties-details.html">La Casanda Villa</a></h4>
-                                <p>
-                                    <span class="location">1 DE Silicon Tower, Denver</span>
-                                    <span class="property-info">1800 Sqft, 6 Bed, 4 Bath, 3 Garage </span>
-                                </p>
-                                <div class="price-box">
-                                    <p>Price $2,32,000</p>
-                                </div>
-                            </div>
-                        </div><!-- single-property End -->
-                    </div>
-
-                    <div class="col-lg-3 col-md-6 col-12">
-                        <!-- single-property Start -->
-                        <div class="single-property mt-30">
-                            <div class="property-img">
-                                <a href="properties-details.html">
-                                    <img src="<?php echo get_template_directory_uri() ?> /assets/images/propertes/08.jpg" alt="">
-                                </a>
-                            </div>
-                            <div class="property-desc">
-                                <h4><a href="properties-details.html">Rainforest de Olive</a></h4>
-                                <p>
-                                    <span class="location">22 First street, Chicago, USA</span>
-                                    <span class="property-info">1200 Sqft, 3 Bed, 2 Bath, 1 Garage </span>
-                                </p>
-                                <div class="price-box">
-                                    <p>Rent $32,00/m</p>
-                                </div>
-                            </div>
-                        </div><!-- single-property End -->
-                    </div>
-
+                    <?php rst_lista_propiedades(-1,'venta') ?>
                 </div>
             </div>
             <div class="tab-pane" id="tab_item_02">
                 <div class="row ">
-
-                    <div class="col-lg-3 col-md-6 col-12">
-                        <!-- single-property Start -->
-                        <div class="single-property mt-30">
-                            <div class="property-img">
-                                <a href="properties-details.html">
-                                    <img src="<?php echo get_template_directory_uri() ?> /assets/images/propertes/05.jpg" alt="">
-                                </a>
-                            </div>
-                            <div class="property-desc">
-                                <h4><a href="properties-details.html">Mariyasa de Casel </a></h4>
-                                <p>
-                                    <span class="location">22 First street, Chicago, USA</span>
-                                    <span class="property-info">1200 Sqft, 3 Bed, 2 Bath, 1 Garage </span>
-                                </p>
-                                <div class="price-box">
-                                    <p>Price $ 1,59,000</p>
-                                </div>
-                            </div>
-                        </div><!-- single-property End -->
-                    </div>
-
-                    <div class="col-lg-3 col-md-6 col-12">
-                        <!-- single-property Start -->
-                        <div class="single-property mt-30">
-                            <div class="property-img">
-                                <a href="properties-details.html">
-                                    <img src="<?php echo get_template_directory_uri() ?> /assets/images/propertes/06.jpg" alt="">
-                                </a>
-                                <span class="level-stryker-2">FOR RENT</span>
-                            </div>
-                            <div class="property-desc">
-                                <h4><a href="properties-details.html">Rose de Alfanez</a></h4>
-                                <p>
-                                    <span class="location">132 Future Street, Boston, USA</span>
-                                    <span class="property-info">1600 Sqft, 4 Bed, 2 Bath, 2 Garage </span>
-                                </p>
-                                <div class="price-box">
-                                    <p>Price $ 1,59,000</p>
-                                </div>
-                            </div>
-                        </div><!-- single-property End -->
-                    </div>
-
-                    <div class="col-lg-3 col-md-6 col-12">
-                        <!-- single-property Start -->
-                        <div class="single-property mt-30">
-                            <div class="property-img">
-                                <a href="properties-details.html">
-                                    <img src="<?php echo get_template_directory_uri() ?> /assets/images/propertes/07.jpg" alt="">
-                                </a>
-                            </div>
-                            <div class="property-desc">
-                                <h4><a href="properties-details.html">La Casanda Villa</a></h4>
-                                <p>
-                                    <span class="location">1 DE Silicon Tower, Denver</span>
-                                    <span class="property-info">1800 Sqft, 6 Bed, 4 Bath, 3 Garage </span>
-                                </p>
-                                <div class="price-box">
-                                    <p>Price $2,32,000</p>
-                                </div>
-                            </div>
-                        </div><!-- single-property End -->
-                    </div>
-
-                    <div class="col-lg-3 col-md-6 col-12">
-                        <!-- single-property Start -->
-                        <div class="single-property mt-30">
-                            <div class="property-img">
-                                <a href="properties-details.html">
-                                    <img src="<?php echo get_template_directory_uri() ?> /assets/images/propertes/08.jpg" alt="">
-                                </a>
-                            </div>
-                            <div class="property-desc">
-                                <h4><a href="properties-details.html">Rainforest de Olive</a></h4>
-                                <p>
-                                    <span class="location">22 First street, Chicago, USA</span>
-                                    <span class="property-info">1200 Sqft, 3 Bed, 2 Bath, 1 Garage </span>
-                                </p>
-                                <div class="price-box">
-                                    <p>Rent $32,00/m</p>
-                                </div>
-                            </div>
-                        </div><!-- single-property End -->
-                    </div>
-                    <div class="col-lg-3 col-md-6 col-12">
-                        <!-- single-property Start -->
-                        <div class="single-property mt-30">
-                            <div class="property-img">
-                                <a href="properties-details.html">
-                                    <img src="<?php echo get_template_directory_uri() ?> /assets/images/propertes/01.jpg" alt="">
-                                </a>
-                                <span class="level-stryker">FOR RENT</span>
-                            </div>
-                            <div class="property-desc">
-                                <h4><a href="properties-details.html">Mariyasa de Casel </a></h4>
-                                <p>
-                                    <span class="location">22 First street, Chicago, USA</span>
-                                    <span class="property-info">1200 Sqft, 3 Bed, 2 Bath, 1 Garage </span>
-                                </p>
-                                <div class="price-box">
-                                    <p>Price $ 1,59,000</p>
-                                </div>
-                            </div>
-                        </div><!-- single-property End -->
-                    </div>
-
-                    <div class="col-lg-3 col-md-6 col-12">
-                        <!-- single-property Start -->
-                        <div class="single-property mt-30">
-                            <div class="property-img">
-                                <a href="properties-details.html">
-                                    <img src="<?php echo get_template_directory_uri() ?> /assets/images/propertes/02.jpg" alt="">
-                                </a>
-                            </div>
-                            <div class="property-desc">
-                                <h4><a href="properties-details.html">Rose de Alfanez</a></h4>
-                                <p>
-                                    <span class="location">132 Future Street, Boston, USA</span>
-                                    <span class="property-info">1600 Sqft, 4 Bed, 2 Bath, 2 Garage </span>
-                                </p>
-                                <div class="price-box">
-                                    <p>Price $ 1,59,000</p>
-                                </div>
-                            </div>
-                        </div><!-- single-property End -->
-                    </div>
-
-                    <div class="col-lg-3 col-md-6 col-12">
-                        <!-- single-property Start -->
-                        <div class="single-property mt-30">
-                            <div class="property-img">
-                                <a href="properties-details.html">
-                                    <img src="<?php echo get_template_directory_uri() ?> /assets/images/propertes/03.jpg" alt="">
-                                </a>
-                                <span class="level-stryker-2">FOR RENT</span>
-                            </div>
-                            <div class="property-desc">
-                                <h4><a href="properties-details.html">La Casanda Villa</a></h4>
-                                <p>
-                                    <span class="location">1 DE Silicon Tower, Denver</span>
-                                    <span class="property-info">1800 Sqft, 6 Bed, 4 Bath, 3 Garage </span>
-                                </p>
-                                <div class="price-box">
-                                    <p>Price $2,32,000</p>
-                                </div>
-                            </div>
-                        </div><!-- single-property End -->
-                    </div>
-
-                    <div class="col-lg-3 col-md-6 col-12">
-                        <!-- single-property Start -->
-                        <div class="single-property mt-30">
-                            <div class="property-img">
-                                <a href="properties-details.html">
-                                    <img src="<?php echo get_template_directory_uri() ?> /assets/images/propertes/04.jpg" alt="">
-                                </a>
-                            </div>
-                            <div class="property-desc">
-                                <h4><a href="properties-details.html">Rainforest de Olive</a></h4>
-                                <p>
-                                    <span class="location">22 First street, Chicago, USA</span>
-                                    <span class="property-info">1200 Sqft, 3 Bed, 2 Bath, 1 Garage </span>
-                                </p>
-                                <div class="price-box">
-                                    <p>Rent $32,00/m</p>
-                                </div>
-                            </div>
-                        </div><!-- single-property End -->
-                    </div>
-
-
+                     <?php rst_lista_propiedades(-1,'arriendo') ?>
                 </div>
             </div>
         </div>
@@ -549,7 +227,7 @@
 
 
 <!-- Featured Property section start -->
-<div class="featured-section section  pt-100 pt-md-65 pt-sm-65 pt-xs-60">
+<!-- <div class="featured-section section  pt-100 pt-md-65 pt-sm-65 pt-xs-60">
     <div class="container">
         <div class="row no-gutters">
             <div class="col-lg-6">
@@ -610,7 +288,7 @@
             </div>
         </div>
     </div>
-</div>
+</div> -->
 <!-- Featured Property section end -->
 
  

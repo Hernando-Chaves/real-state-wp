@@ -93,13 +93,13 @@
                             <ul class="footer-list">
                                 <li>
                                     <div class="contact-text">
-                                        <i class="glyph-icon flaticon-placeholder"></i> 
+                                        <i class="fas fa-map-marker "></i> 
                                         <p>256, 1st AVE, Manchester <br>125 , Noth England</p>
                                     </div>
                                 </li>
                                 <li>
                                     <div class="contact-text">
-                                        <i class="glyph-icon flaticon-call"></i> 
+                                        <i class="fas fa-phone"></i> 
                                         <p>
                                             <span>Telephone : <a href="tel:1234566789"> +88 (012) 356 958 45</a></span>
                                             <span>Telephone : <a href="tel:1234566789"> +88 (012) 356 958 45</a></span>
@@ -109,7 +109,7 @@
                                 </li>
                                 <li>
                                     <div class="contact-text">
-                                        <i class="glyph-icon flaticon-earth"></i>
+                                        <i class="fas fa-envelope"></i>
                                         <p>
                                             <span>Email : <a href="mailto:info@example.com">info@example.com</a></span>
                                             <span>Web : <a href="https://hasthemes.com/">www.example.com</a></span>

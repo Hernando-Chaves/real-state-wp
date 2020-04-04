@@ -12,9 +12,11 @@
 			'orderby'        => 'date',
 			'order'          => 'DESC',
 			'tax_query'=> [
-				'taxonomy' => 'estado',
-				'field'    => 'slug',
-				'terms'    => $estado,
+				[
+					'taxonomy' => 'estado',
+					'field'    => 'slug',
+					'terms'    => $estado,
+				]
 			]
  		];
 
@@ -149,11 +151,11 @@ if(!function_exists('rst_listar_agentes'))
 */
  if(!function_exists('rst_filtra_propiedades'))
  {
- 	function rst_filtra_propiedades($estado)
+ 	function rst_filtra_propiedades($num,$estado)
  	{
  		$args = [
 			'post_type'      => 'propiedad',
-			'posts_per_page' => -1,
+			'posts_per_page' => $num,
 			'orderby'        => 'rand',
 			'tax_query'      => [
                [
@@ -241,3 +243,5 @@ add_image_size('agente_thumb',80,86,['center','top']);
 add_image_size('agente_list',215,323,['center','top']);
 add_image_size('img_cat_small',470,380,['center','top']);
 add_image_size('img_cat_big',669,380,['center','top']);
+add_image_size('categ1',470,380,['center','top']);
+add_image_size('categ2',669,380,['center','top']);

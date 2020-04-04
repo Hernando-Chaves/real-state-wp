@@ -31,7 +31,7 @@
             <div id="propiedadList" class="tab-content">
                  <?php 
                  	foreach($estados as $estado):
-                 		echo  rst_filtra_propiedades($estado->slug);
+                 		echo  rst_filtra_propiedades(4,$estado->slug);
                  	endforeach;
                  ?>
             </div>
