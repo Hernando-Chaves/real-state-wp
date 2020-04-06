@@ -42,7 +42,10 @@
 	                
 	                <div class="col-lg-3 col-md-3">
 	                    <div class="header-buttons">
-	                        <a class="header-btn btn" href="add-property.html">Agregar Propiedad</a>
+	                    	<?php 
+	                    		$page = get_page_by_title('Agregar Inmueble');
+	                    	?>
+	                        <a class="header-btn btn" href="<?php echo get_permalink($page->ID) ?>">Agregar Propiedad</a>
 	                        <?php if(is_user_logged_in()): ?>
 	                       		 <a class="header-btn text-white" href="<?php echo wp_logout_url(get_permalink()) ?>">Salir</a>
 	                       	<?php else: ?>
